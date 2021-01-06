@@ -1,13 +1,13 @@
 let cmtVersion = "0.1"
 
 console.log(
-    `createPopup v ${cmtVersion}\n`,
+    `createMenuTabs v ${cmtVersion}\n`,
     'Auteur :   X\n',
     "Rocking..."
 )
 let cmtIssue = (i,m) => {
     console.log(
-    `createPopup v ${cmtVersion}\n`,
+    `createMrnuTabs v ${cmtVersion}\n`,
     `'issue < ${i} > : "${m}"'` 
     )
     return null
@@ -31,6 +31,7 @@ window.addEventListener(
                             menuTabs.appendChild(tabs[i].elem)
                         }
                     )
+                    document.querySelector(parent).appendChild(menuTabs)
                     return {
                         elem : menuTabs
                         ,options
@@ -47,12 +48,16 @@ window.addEventListener(
                             menuTab[name] = value
                         }
                     )
+                    menuTab.addEventListener(
+                        'click'
+                        ,listener
+                    )
                     return {
                         elem: menuTab
                         ,listener
                     }
                 }
             }
-        )
+        )()
     }
 )
